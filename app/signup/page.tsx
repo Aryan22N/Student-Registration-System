@@ -1,0 +1,9 @@
+import { SignupComp } from "@/components/SignupComp";
+
+export default function SignupPage() {
+  return (
+    <div className="flex min-h-screen items-center justify-center">
+      <SignupComp />
+    </div>
+  );
+}
