@@ -2,8 +2,8 @@
 import React from 'react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { MenuToggleIcon } from '@/components/menu-toggle-icon';
-import { useScroll } from '@/components/use-scroll';
+import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon';
+import { useScroll } from '@/components/ui/use-scroll';
 import { createPortal } from 'react-dom';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
