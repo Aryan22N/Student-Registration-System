@@ -1,15 +1,24 @@
-"use client";
-
 import Header from "@/components/Header";
-import { useRouter } from "next/navigation";
+import { adminAuth } from "@/lib/firebaseAdmin";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
-export default function ProtectedLayout({
+export default async function ProtectedLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const router = useRouter();
+  const cookieStore = await cookies();
+  const token = cookieStore.get("token")?.value;
+  if (!token) {
+    redirect("/login");
+  }
 
+  try {
+    await adminAuth.verifyIdToken(token);
+  } catch {
+    redirect("/login");
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
