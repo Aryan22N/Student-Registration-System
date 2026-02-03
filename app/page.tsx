@@ -1,10 +1,11 @@
+import Header from "@/components/Header";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <div>
       {/* Public Navbar */}
-      <nav className="flex items-center justify-between px-8 py-4 border-b">
+      {/* <nav className="flex items-center justify-between px-8 py-4 border-b">
         <h1 className="text-xl font-bold">Student Reg System</h1>
 
         <div className="flex gap-4">
@@ -15,7 +16,8 @@ export default function Home() {
             Get Started
           </Link>
         </div>
-      </nav>
+      </nav> */}
+      <Header />
 
       {/* Hero Section */}
       <section className="flex flex-col items-center text-center py-24 px-6">
